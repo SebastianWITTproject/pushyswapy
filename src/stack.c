@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcombeau <mcombeau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: switt <switt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 14:26:12 by mcombeau          #+#    #+#             */
-/*   Updated: 2022/04/30 13:30:26 by mcombeau         ###   ########.fr       */
+/*   Updated: 2023/08/02 21:54:05 by switt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ t_stack	*stack_new(int value)
 	if (!new)
 		return (NULL);
 	new->value = value;
-	new->index = 0;
 	new->pos = -1;
 	new->target_pos = -1;
 	new->cost_a = -1;

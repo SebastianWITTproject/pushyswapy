@@ -6,7 +6,7 @@
 /*   By: switt <switt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 15:26:20 by mcombeau          #+#    #+#             */
-/*   Updated: 2023/08/02 20:56:53 by switt            ###   ########.fr       */
+/*   Updated: 2023/08/02 21:55:50 by switt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,29 +95,29 @@ int	get_lowest_index_position(t_stack **stack)
 *	So target_pos needs to be the position of index 3, since that is
 *	the "end" of the stack.
 */
-static int	get_target(t_stack **a, int b_idx,
-								int target_idx, int target_pos)
+static int	get_target(t_stack **a, int b_value,
+								int target_value, int target_pos)
 {
 	t_stack	*tmp_a;
 
 	tmp_a = *a;
 	while (tmp_a)
 	{
-		if (tmp_a->index > b_idx && tmp_a->index < target_idx)
+		if (tmp_a->value > b_value && tmp_a->value < target_value)
 		{
-			target_idx = tmp_a->index;
+			target_value = tmp_a->value;
 			target_pos = tmp_a->pos;
 		}
 		tmp_a = tmp_a->next;
 	}
-	if (target_idx != INT_MAX)
+	if (target_value != INT_MAX)
 		return (target_pos);
 	tmp_a = *a;
 	while (tmp_a)
 	{
-		if (tmp_a->index < target_idx)
+		if (tmp_a->value < target_value)
 		{
-			target_idx = tmp_a->index;
+			target_value = tmp_a->value;
 			target_pos = tmp_a->pos;
 		}
 		tmp_a = tmp_a->next;
@@ -143,7 +143,7 @@ void	get_target_position(t_stack **a, t_stack **b)
 	target_pos = 0;
 	while (tmp_b)
 	{
-		target_pos = get_target(a, tmp_b->index, INT_MAX, target_pos);
+		target_pos = get_target(a, tmp_b->value, INT_MAX, target_pos);
 		tmp_b->target_pos = target_pos;
 		tmp_b = tmp_b->next;
 	}

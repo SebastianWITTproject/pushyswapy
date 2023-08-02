@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcombeau <mcombeau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: switt <switt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 16:55:55 by mcombeau          #+#    #+#             */
-/*   Updated: 2022/04/30 13:25:21 by mcombeau         ###   ########.fr       */
+/*   Updated: 2023/08/02 21:55:28 by switt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,6 @@ static void	swap(t_stack *stack)
 	tmp = stack->value;
 	stack->value = stack->next->value;
 	stack->next->value = tmp;
-	tmp = stack->index;
-	stack->index = stack->next->index;
-	stack->next->index = tmp;
 }
 
 /* do_sa:
