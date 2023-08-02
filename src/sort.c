@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcombeau <mcombeau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: switt <switt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 13:32:10 by mcombeau          #+#    #+#             */
-/*   Updated: 2022/04/30 17:39:26 by mcombeau         ###   ########.fr       */
+/*   Updated: 2023/08/02 20:53:58 by switt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,17 +26,6 @@ static void	push_all_save_three(t_stack **stack_a, t_stack **stack_b)
 	stack_size = get_stack_size(*stack_a);
 	pushed = 0;
 	i = 0;
-	while (stack_size > 6 && i < stack_size && pushed < stack_size / 2)
-	{
-		if ((*stack_a)->index <= stack_size / 2)
-		{
-			do_pb(stack_a, stack_b);
-			pushed++;
-		}
-		else
-			do_ra(stack_a);
-		i++;
-	}
 	while (stack_size - pushed > 3)
 	{
 		do_pb(stack_a, stack_b);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_tiny.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcombeau <mcombeau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: switt <switt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 17:41:01 by mcombeau          #+#    #+#             */
-/*   Updated: 2022/04/30 14:03:55 by mcombeau         ###   ########.fr       */
+/*   Updated: 2023/08/02 19:57:47 by switt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,28 @@
 /* find_highest_index:
 *	Returns the highest index in a stack.
 */
-static int	find_highest_index(t_stack *stack)
+static t_stack	*find_highest(t_stack **stack)
 {
-	int		index;
+	int				highest;
+	t_stack	*tmp;
+	t_stack	*highest_node;
 
-	index = stack->index;
-	while (stack)
+	if (stack == NULL)
+		return (NULL);
+	tmp = *stack;
+	highest = INT_MIN;
+	while (tmp)
 	{
-		if (stack->index > index)
-			index = stack->index;
-		stack = stack->next;
+		if (tmp->value > highest)
+		{
+			highest = tmp->value;
+			highest_node = tmp;
+		}
+		tmp = tmp->next;
 	}
-	return (index);
+	return (highest_node);
 }
+
 
 /* tiny_sort:
 *	Sorts a stack of 3 numbers in 2 or fewer moves. The sorting is done by index
@@ -44,15 +53,15 @@ static int	find_highest_index(t_stack *stack)
 */
 void	tiny_sort(t_stack **stack)
 {
-	int		highest;
+	t_stack	*highest_node;
 
 	if (is_sorted(*stack))
 		return ;
-	highest = find_highest_index(*stack);
-	if ((*stack)->index == highest)
+	highest_node = find_highest(stack);
+	if (*stack == highest_node)
 		do_ra(stack);
-	else if ((*stack)->next->index == highest)
+	else if ((*stack)->next == highest_node)
 		do_rra(stack);
-	if ((*stack)->index > (*stack)->next->index)
+	if ((*stack)->value > (*stack)->next->value)
 		do_sa(stack);
 }

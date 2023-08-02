@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   position.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcombeau <mcombeau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: switt <switt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 15:26:20 by mcombeau          #+#    #+#             */
-/*   Updated: 2022/04/30 17:26:18 by mcombeau         ###   ########.fr       */
+/*   Updated: 2023/08/02 20:56:53 by switt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,11 @@ static void	get_position(t_stack **stack)
 int	get_lowest_index_position(t_stack **stack)
 {
 	t_stack	*tmp;
-	int		lowest_index;
+	int		lowest_value;
 	int		lowest_pos;
 
 	tmp = *stack;
-	lowest_index = INT_MAX;
+	lowest_value = INT_MAX;
 	get_position(stack);
 	lowest_pos = tmp->pos;
 	while (tmp)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcombeau <mcombeau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: switt <switt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 13:47:42 by mcombeau          #+#    #+#             */
-/*   Updated: 2022/04/30 17:39:25 by mcombeau         ###   ########.fr       */
+/*   Updated: 2023/08/02 18:12:30 by switt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 typedef struct s_stack
 {
 	int				value;
-	int				index;
 	int				pos;
 	int				target_pos;
 	int				cost_a;
