@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: switt <switt@student.42.fr>                +#+  +:+       +#+        */
+/*   By: seb <seb@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 13:47:42 by mcombeau          #+#    #+#             */
-/*   Updated: 2023/08/02 18:12:30 by switt            ###   ########.fr       */
+/*   Updated: 2023/08/04 01:05:22 by seb              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ typedef struct s_stack
 
 /* Initialization */
 
-t_stack		*fill_stack_values(int ac, char **av);
+t_stack		*fill_stack_values(char **av, int is_split);
 void		assign_index(t_stack *stack_a, int ac);
 
 /* Sorting Algorithms */
@@ -82,6 +82,7 @@ void		free_stack(t_stack **stack);
 long int	ft_atoi(const char *str);
 void		ft_putstr(char *str);
 int			nb_abs(int nb);
+char	**ft_split(char const *str, char c);
 
 /* Error */
 
@@ -89,8 +90,8 @@ void		exit_error(t_stack **stack_a, t_stack **stack_b);
 
 /* Input Check */
 
-int			is_correct_input(char **av);
-int			is_digit(char c);
+int			is_correct_input(char **av, int is_split);
+int			ft_isdigit(char c);
 int			is_sign(char c);
 int			nbstr_cmp(const char *s1, const char *s2);
 

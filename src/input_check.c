@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input_check.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcombeau <mcombeau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: seb <seb@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 13:27:24 by mcombeau          #+#    #+#             */
-/*   Updated: 2022/05/13 15:57:10 by mcombeau         ###   ########.fr       */
+/*   Updated: 2023/08/04 01:06:11 by seb              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ static int	arg_is_number(char *av)
 	i = 0;
 	if (is_sign(av[i]) && av[i + 1] != '\0')
 		i++;
-	while (av[i] && is_digit(av[i]))
+	while (av[i] && ft_isdigit(av[i]))
 		i++;
-	if (av[i] != '\0' && !is_digit(av[i]))
+	if (av[i] != '\0' && !ft_isdigit(av[i]))
 		return (0);
 	return (1);
 }
@@ -78,13 +78,15 @@ static int	arg_is_zero(char *av)
 *   Checks if the given arguments are all numbers, without duplicates.
 *   Return: 1 if the arguments are valid, 0 if not.
 */
-int	is_correct_input(char **av)
+int	is_correct_input(char **av, int is_split)
 {
 	int	i;
 	int	nb_zeros;
 
 	nb_zeros = 0;
 	i = 1;
+	if (is_split)
+		i = 0;
 	while (av[i])
 	{
 		if (!arg_is_number(av[i]))

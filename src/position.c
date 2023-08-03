@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   position.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: switt <switt@student.42.fr>                +#+  +:+       +#+        */
+/*   By: seb <seb@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 15:26:20 by mcombeau          #+#    #+#             */
-/*   Updated: 2023/08/02 21:55:50 by switt            ###   ########.fr       */
+/*   Updated: 2023/08/04 00:10:21 by seb              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,10 @@ int	get_lowest_index_position(t_stack **stack)
 	lowest_pos = tmp->pos;
 	while (tmp)
 	{
-		if (tmp->index < lowest_index)
+		if (tmp->value < lowest_value)
 		{
-			lowest_index = tmp->index;
-			lowest_pos = tmp->pos;
+			lowest_value = tmp->value;
+			lowest_pos = tmp->value;
 		}
 		tmp = tmp->next;
 	}

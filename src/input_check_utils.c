@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input_check_utils.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcombeau <mcombeau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: seb <seb@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 13:25:28 by mcombeau          #+#    #+#             */
-/*   Updated: 2022/04/25 17:15:03 by mcombeau         ###   ########.fr       */
+/*   Updated: 2023/08/04 01:17:55 by seb              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 *   Checks if the character is a digit.
 *   Return: 1 if the character is a digit, 0 if not.
 */
-int	ft_isdigit(int c)
+int	ft_isdigit(char c)
 {
 	if (c >= '0' && c <= '9')
 	{

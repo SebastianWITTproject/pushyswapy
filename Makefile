@@ -12,7 +12,7 @@ SRC		= main.c \
 		swap.c push.c rotate.c reverse_rotate.c \
 		sort_tiny.c sort.c \
 		position.c cost.c do_move.c \
-		utils.c
+		utils.c ft_split.c
 SRCS	= $(addprefix $(SRC_PATH), $(SRC))
 OBJ		= $(SRC:.c=.o)
 OBJS	= $(addprefix $(OBJ_PATH), $(OBJ))

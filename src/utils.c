@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcombeau <mcombeau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: seb <seb@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 13:40:24 by mcombeau          #+#    #+#             */
-/*   Updated: 2022/06/13 19:19:03 by mcombeau         ###   ########.fr       */
+/*   Updated: 2023/08/04 00:12:52 by seb              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ long int	ft_atoi(const char *str)
 		isneg *= -1;
 		i++;
 	}
-	while (is_digit(str[i]))
+	while (ft_isdigit(str[i]))
 	{
 		nb = (nb * 10) + (str[i] - '0');
 		i++;
