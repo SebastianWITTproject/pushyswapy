@@ -33,7 +33,7 @@ t_stack	*fill_stack_values(char **av, int is_split)
 		printf("%s ", av[i]);
 		nb = ft_atoi(av[i]);
 		if (nb > INT_MAX || nb < INT_MIN)
-			exit_error(&stack_a, NULL);
+			exit_error(&stack_a, NULL, is_split, av);
 		if (stack_a == NULL)
 			stack_a = stack_new((int)nb);
 		else

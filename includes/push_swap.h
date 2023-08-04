@@ -83,10 +83,11 @@ long int	ft_atoi(const char *str);
 void		ft_putstr(char *str);
 int			nb_abs(int nb);
 char	**ft_split(char const *str, char c);
+char	**ft_free(char **strs);
 
 /* Error */
 
-void		exit_error(t_stack **stack_a, t_stack **stack_b);
+void		exit_error(t_stack **stack_a, t_stack **stack_b, int is_split, char **av);
 
 /* Input Check */
 

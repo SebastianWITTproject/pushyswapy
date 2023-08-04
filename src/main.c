@@ -65,12 +65,14 @@ int	main(int ac, char **av)
 		is_split = 1;
 	}
 	if (!is_correct_input(av, is_split))
-		exit_error(NULL, NULL);
+		exit_error(NULL, NULL, is_split, av);
 	stack_b = NULL;
 	stack_a = fill_stack_values(av, is_split);
 	stack_size = get_stack_size(stack_a);
 	push_swap(&stack_a, &stack_b, stack_size);
 	free_stack(&stack_a);
 	free_stack(&stack_b);
+	if (is_split)
+		ft_free(av);
 	return (0);
 }

@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-static char	**ft_free(char **strs)
+char	**ft_free(char **strs)
 {
 	int	i;
 

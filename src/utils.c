@@ -34,12 +34,14 @@ void	free_stack(t_stack **stack)
 *   Writes "Error\n" to the standard output after freeing stack a and b.
 *	Exits with standard error code 1.
 */
-void	exit_error(t_stack **stack_a, t_stack **stack_b)
+void	exit_error(t_stack **stack_a, t_stack **stack_b, int is_split, char **av)
 {
 	if (stack_a == NULL || *stack_a != NULL)
 		free_stack(stack_a);
 	if (stack_b == NULL || *stack_b != NULL)
 		free_stack(stack_b);
+	if (is_split)
+		ft_free(av);		
 	write(2, "Error\n", 6);
 	exit (1);
 }
