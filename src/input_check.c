@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input_check.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seb <seb@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: switt <switt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 13:27:24 by mcombeau          #+#    #+#             */
-/*   Updated: 2023/08/04 01:06:11 by seb              ###   ########.fr       */
+/*   Updated: 2023/08/04 23:40:03 by switt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,14 @@ static int	arg_is_number(char *av)
 *   Checks if the argument list has duplicate numbers.
 *   Return: 1 if a duplicate is found, 0 if there are none.
 */
-static int	have_duplicates(char **av)
+static int	have_duplicates(char **av, int is_split)
 {
 	int	i;
 	int	j;
 
 	i = 1;
+	if (is_split)
+		i = 0;
 	while (av[i])
 	{
 		j = 1;
@@ -93,10 +95,11 @@ int	is_correct_input(char **av, int is_split)
 			return (0);
 		nb_zeros += arg_is_zero(av[i]);
 		i++;
+		
 	}
 	if (nb_zeros > 1)
 		return (0);
-	if (have_duplicates(av))
+	if (have_duplicates(av, is_split))
 		return (0);
 	return (1);
 }
