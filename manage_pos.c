@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   position.c                                         :+:      :+:    :+:   */
+/*   manage_pos.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seb <seb@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: switt <switt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 15:26:20 by mcombeau          #+#    #+#             */
-/*   Updated: 2023/08/04 00:10:21 by seb              ###   ########.fr       */
+/*   Updated: 2023/08/05 04:27:35 by switt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int	get_lowest_index_position(t_stack **stack)
 		if (tmp->value < lowest_value)
 		{
 			lowest_value = tmp->value;
-			lowest_pos = tmp->value;
+			lowest_pos = tmp->pos;
 		}
 		tmp = tmp->next;
 	}
